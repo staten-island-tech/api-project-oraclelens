@@ -7,3 +7,5 @@ function greet(name) {
 
 const suzie = greet("suzie");
 console.log(suzie);
+
+/* https://datausa.io/api/data?drilldowns=Nation&measures=Population */
