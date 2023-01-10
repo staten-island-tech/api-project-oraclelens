@@ -1,11 +1,16 @@
-function greet(name) {
-  const greetPromise = new Promise(function (resolve, reject) {
-    resolve(`Hello ${name}`);
-  });
-  return greetPromise;
+const DOMselectors = {};
+
+const URL = "https://api.disneyapi.dev/characters";
+
+async function getTheMouse(URL) {
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    console.log(data.data);
+    console.log(response);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 }
-
-const suzie = greet("suzie");
-console.log(suzie);
-
-/* https://datausa.io/api/data?drilldowns=Nation&measures=Population */
+getTheMouse(URL);
