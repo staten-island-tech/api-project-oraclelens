@@ -1,3 +1,5 @@
+import "./styles/style.css";
+
 const DOMSelectors = {
   disneybutton: document.getElementById("getMouseButton"),
   film: document.getElementById("film"),
