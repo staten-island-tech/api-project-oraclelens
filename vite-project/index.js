@@ -7,7 +7,7 @@ const DOMSelectors = {
   display: document.getElementById("display"),
 };
 
-const URL = "https://api.disneyapi.dev/characters?page=5";
+const URL = "https://www.amiiboapi.com/api/gameseries/";
 
 document.addEventListener("DOMContentLoaded", findFilm);
 async function getTheMouse(URL) {
@@ -15,7 +15,7 @@ async function getTheMouse(URL) {
     const response = await fetch(URL);
     const data = await response.json();
     data.data
-      .filter((el) => el.name.includes("Mulan"))
+      .filter((el) => el.name.includes("Animal Crossing"))
       .forEach((el) => {
         DOMSelectors.display.insertAdjacentHTML(
           "beforeend",
