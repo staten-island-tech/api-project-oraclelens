@@ -5,22 +5,23 @@ const DOMSelectors = {
   amiibo: document.getElementById("amiibo"),
   input: document.getElementById("input"),
   display: document.getElementById("display"),
+  container: document.getElementById("container"),
 };
 
-const URL = "https://www.amiiboapi.com/api/amiibo/";
+const URL = "https://www.amiiboapi.com/api/amiibo";
 
 document.addEventListener("DOMContentLoaded", findAmiibo);
 async function getAmiibo(URL) {
   try {
     const response = await fetch(URL);
-    if (response.status < 299) {
+    if (response.status < 200) {
       console.log(response.status);
       throw new Error(response);
     } else {
       const data = await response.json();
-      console.log(data);
+      console.log(data.amiibo);
       if (data.amiibo) {
-        DOMSelectors.display.innerHTML = `${amiibo.image} <br><br> ${aiimbo.name}`;
+        DOMSelectors.container.innerHTML = `${amiibo.image} <br><br> ${amiibo.name}`;
       }
     }
   } catch (error) {
@@ -38,5 +39,9 @@ document
   });
 
 document.addEventListener("DOMContentLoaded", function () {
+  getAmiibo(URL);
+});
+
+DOMSelectors.amiibobutton.addEventListener("click", function () {
   getAmiibo(URL);
 });
