@@ -21,7 +21,17 @@ async function getAmiibo(URL) {
       const data = await response.json();
       console.log(data.amiibo);
       if (data.amiibo) {
-        DOMSelectors.container.innerHTML = `${amiibo.image} <br><br> ${amiibo.name}`;
+        data.amiibo.forEach((el) => {
+          console.log(el.name);
+          DOMSelectors.container.insertAdjacentHTML(
+            "beforeend",
+            `
+              <div class="inside">
+              <h2>${el.name}</h2>
+              <img class="abby" src="${el.image}" alt="add image">        
+              </div>`
+          );
+        });
       }
     }
   } catch (error) {
