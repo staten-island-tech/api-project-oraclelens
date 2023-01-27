@@ -4,20 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Get an Image of an Amiibo Character</title>
   </head>
   <body>
-    <div class="yup"><h1 class="title">Amiibo Characters</h1></div>
-    <div id="findAmiibo">
-      <label for="input" class="find">type in an amiibo:</label>
-      <input type="text" id="input" class="search" />
-    </div>
-    <div class="box">
-      <p id="amiibo" class="amiibo"></p>
-      <button id="getAmiiboButton" class="button">click for ur image:</button>
-    </div>
-    <div id="display">
-      <div id="container" class="container"></div>
-    </div>
+    <header>  
+      <div class="titlecard">
+        <h1 class="title">Get an Image of an Amiibo Character!</h1></div>
+    </header>
+
+    <nav aria-label="input_info">    
+      <div class="input">
+      <label for="findAmiibo">Choose an Amiibo:</label>
+      <select name="findAmiibo" class="findAmiibo" id="findAmiibo">
+        <option>None</option>
+        <option>Mario</option>
+        <option>Luigi</option> 
+        <option>Peach</option> 
+        <option>Yoshi</option> 
+        <option>Rosalina</option> 
+        <option>Bowser</option> 
+        <option>Bayonetta</option> 
+      </select>
+      </div>
+    
+    <button class="btn" id="btn">Click to Get Your Amiibo Image!</button></nav>
+
+    <main><div id="display"></div></main>
 
     <script type="module" src="index.js"></script>
   </body>
