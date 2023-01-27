@@ -6,7 +6,7 @@ const DOMSelectors = {
   AmiiboFun: document.getElementById("findAmiibo"),
 };
 
-const URL = "https://www.amiiboapi.com/api/amiibo";
+const URL = "http://www.amiiboapi.com/api/amiibo";
 
 async function getAmiibo() {
   DOMSelectors.display.innerHTML = "";
